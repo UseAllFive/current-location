@@ -1,10 +1,5 @@
 # Documentation
 
-## Setup
-
-### Placement
-Must be placed **after** jQuery
-
 ## Example usage
 
 ```javascript
