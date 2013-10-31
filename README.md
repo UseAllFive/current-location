@@ -16,6 +16,6 @@ window.currentLocation.init({
 |--------------------|---------------|------------|-------------------------|
 | success       	 | function      | position   | log position in console |
 | error         	 | function      | err 	      | log error in console    |
-| enableHighAccuracy | var           |      	  |	false                   |
-| timeout       	 | var           |            | Infinity                |
-| maximumAge      	 | var           |  	      | 0                       |
+| enableHighAccuracy | boolean       |      	  |	false                   |
+| timeout       	 | number        |            | Infinity                |
+| maximumAge      	 | number        |  	      | 0                       |
