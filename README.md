@@ -2,9 +2,6 @@
 
 ## Setup
 
-### Requirements
-jQuery
-
 ### Placement
 Must be placed **after** jQuery
 

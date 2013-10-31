@@ -20,22 +20,22 @@ Requires: jQuery 1.10.2
         "maximumAge": 0,
         //-- position (object) - required - position data
         "success": function(position) {
-            console.log(position);
+            _log(position);
         },
         //-- err (object) - optional - error data
         "error": function(err) {
             err = err || false;
-            console.log("Error getting current location...")
+            _log("Error getting current location...");
             if (err) {
-                console.log("Error code: " + err.code);
-                console.log("Error message: " + err.message);
+                _log("Error code: " + err.code);
+                _log("Error message: " + err.message);
             }
         }
-    }
+    };
 
     //-- args (object) autocomplete settings
     function _init(args) {
-        var options = $.extend(_default, args);
+        var options = _extend(_default, args);
         //-- Detect current location support
         if ( navigator.geolocation ) {
             //-- Get current location
@@ -46,7 +46,7 @@ Requires: jQuery 1.10.2
                 },
                 //-- Error
                 function(err) {
-                    options.error(err)
+                    options.error(err);
                 },
                 //-- Options
                 {
@@ -59,6 +59,25 @@ Requires: jQuery 1.10.2
         //-- geolocation not supported
         else {
             options.error();
+        }
+    }
+
+    function _extend() {
+        var i;
+        var key;
+        for( i = 1; i < arguments.length; i++ ) {
+            for ( key in arguments[i] ) {
+                if( arguments[i].hasOwnProperty(key) ) {
+                    arguments[0][key] = arguments[i][key];
+                }
+            }
+        }
+        return arguments[0];
+    }
+
+    function _log(val) {
+        if ( window.console && window.console.log ) {
+            window.console.log(val);
         }
     }
 
