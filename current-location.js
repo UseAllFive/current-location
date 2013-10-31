@@ -2,7 +2,6 @@
 Name: current-location.js
 Author: Bret Morris
 Version: 1.0
-Requires: jQuery 1.10.2
 *************************/
 
 (function() {
